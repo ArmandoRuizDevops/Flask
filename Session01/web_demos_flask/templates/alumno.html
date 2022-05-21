@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Alumno : {{alum.nombre}}</h1>
+<h2>Curso : {{alum.curso}}</h2>
+<h2>Nota : {{alum.nota}}</h2>
+{% if alum.picture %}
+   <img src="{{alum.picture}}" alt="{{alum.nombre}}" width="200px" />
+{% else %}
+  <h2>No Existe Imagen que Mostrar</h2>
+{% endif %}
+<br>
+<a href="/">Volver</a>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Lista de Tareas Diarias</h1>
+<ul>
+    {% for task in tasks %}
+     <li>
+         {% if task.done %} <strike> {% endif %} {{ task.content }} {% if task.done %} </strike> {% endif %}
+         <a href="/done/{{task.id}}">X</a>
+         <a href="/delete/{{task.id}}">Delete</a>
+     </li>
+    {% endfor %}
+</ul>
+
+<form action = "/task" method="post">
+    <p><input text name="content"></p>
+    <input type="submit" value="Add Task">
+</form>
+</body>
+</html>
